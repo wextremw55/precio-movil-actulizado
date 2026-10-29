@@ -1,0 +1,23 @@
+name: Precio diario
+on:
+  schedule:
+    - cron: "0 7 * * *"   # todos los días a las 7:00 UTC
+  workflow_dispatch:       # permite lanzarlo a mano para probar
+permissions:
+  contents: write
+jobs:
+  precio:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install requests
+      - run: python precio.py
+      - run: |
+          git config user.name "bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add precios.csv
+          git commit -m "Precio $(date +%F)" || echo "Sin cambios"
+          git push
