@@ -1,8 +1,9 @@
 name: Precio diario
 on:
   schedule:
-    - cron: "17 7 * * *"   # todos los días a las 7:00 UTC
-    - cron: "35 10 * * *"
+    - cron: "17 7 * * *"
+    - cron: "43 9 * * *"
+    - cron: "11 13 * * *"
   workflow_dispatch:       # permite lanzarlo a mano para probar
 permissions:
   contents: write
