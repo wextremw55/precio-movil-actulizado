@@ -4,6 +4,7 @@ PRODUCTOS = [
     {"sku": "SVIVX300P16512DMLIBA", "archivo": "precios.csv"},
     {"sku": "SOPCPH279712512GLIBA", "archivo": "precios_movil2.csv"},
     {"sku": "SOPPFX9P16512TCLIBA", "archivo": "precios_movil3.csv"},
+    {"sku": "SHONM8P12512GSCLIBA", "archivo": "precios_movil4.csv"},
 ]
 
 hoy = datetime.date.today().isoformat()
